@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+  <!-- Toolbar at the top -->
+  <com.google.android.material.appbar.AppBarLayout
+      android:id="@+id/appbar"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content">
+
+    =======
+    <!--      android:theme="@style/AppTheme.AppBarOverlay">-->
+
+    <include
+        android:id="@+id/customToolbar"
+        layout="@layout/custom_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <com.google.android.material.appbar.CollapsingToolbarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:contentScrim="?attr/colorPrimary"
+        app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+      <!-- Your Toolbar content -->
+
+    </com.google.android.material.appbar.CollapsingToolbarLayout>
+  </com.google.android.material.appbar.AppBarLayout>
+
+
+  <androidx.core.widget.NestedScrollView
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+
+
+      app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+      <ImageView
+          android:id="@+id/imageViewLine"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="32dp"
+          android:layout_marginTop="16dp"
+          android:layout_marginEnd="32dp"
+          android:src="@drawable/line"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintHorizontal_bias="0.0"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/txtDescriptionCerbung" />
+
+      <Button
+          android:id="@+id/btnDisplayGenre"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="32dp"
+          android:layout_marginTop="16dp"
+          android:backgroundTint="#E8DEF8"
+          android:text="Misteri"
+          android:textAllCaps="false"
+          android:textSize="16sp"
+          app:cornerRadius="18dp"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/txtTitleCerbung" />
+
+      <Button
+          android:id="@+id/btnDisplayAccess"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="12dp"
+          android:layout_marginTop="16dp"
+          android:backgroundTint="#E8DEF8"
+          android:text="Restricted"
+          android:textAllCaps="false"
+          android:textSize="16sp"
+          app:cornerRadius="18dp"
+          app:layout_constraintStart_toEndOf="@+id/btnDisplayGenre"
+          app:layout_constraintTop_toBottomOf="@+id/txtTitleCerbung" />
+
+      <TextView
+          android:id="@+id/txtTitleCerbung"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="32dp"
+          android:layout_marginTop="32dp"
+          android:layout_marginEnd="32dp"
+          android:fontFamily="@font/roboto"
+          android:text="Dunia Dalam Cermin: Kisah Terbalik yang Misterius"
+          android:textSize="16sp"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintHorizontal_bias="0.49"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toTopOf="parent" />
+
+      <TextView
+          android:id="@+id/txtDescriptionCerbung"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="32dp"
+          android:layout_marginTop="16dp"
+          android:layout_marginEnd="32dp"
+          android:fontFamily="@font/roboto"
+          android:lineSpacingExtra="5sp"
+          android:text="Kisah seru tentang seorang anak yang menemukan cermin ajaib di sebuah toko antik. Saat ia melihat ke dalam cermin, ia terseret ke dunia yang seakan terbalik, di mana segalanya tampak seperti dunianya, namun memiliki perbedaan misterius yang membingungkan. Ia harus memecahkan teka-teki dan mengungkap rahasia di balik cermin ajaib ini untuk bisa kembali ke dunianya sendiri, sambil menghadapi tantangan yang tak terduga dalam perjalanan yang penuh dengan misteri dan keajaiban."
+          android:textAlignment="viewStart"
+          android:textSize="14sp"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintHorizontal_bias="0.0"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/btnDisplayAccess" />
+
+      <TextView
+          android:id="@+id/txtDescriptionCerbung2"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="32dp"
+          android:layout_marginTop="16dp"
+          android:layout_marginEnd="32dp"
+          android:fontFamily="@font/roboto"
+          android:lineSpacingExtra="5sp"
+          android:text="Dengan hati berdebar, Alex mengelilingi toko antik tua itu. Matanya tertarik pada cermin kuno yang memancarkan keindahan misterius. Tanpa pikir panjang, ia menyentuh permukaannya, dan dunia seketika terbalik."
+          android:textAlignment="viewStart"
+          android:textSize="14sp"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintHorizontal_bias="0.0"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/imageViewLine" />
+
+      <CheckBox
+          android:id="@+id/checkBoxTerms"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="32dp"
+          android:layout_marginTop="16dp"
+          android:layout_marginEnd="32dp"
+          android:buttonTint="#6750A3"
+          android:checked="true"
+          android:lineSpacingExtra="5sp"
+          android:text="I agree with the rules and policies in creating Cerbung. This includes not containing racial slurs, discrimination, religion, advertisements, and politics"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/txtDescriptionCerbung2" />
+
+      <Button
+          android:id="@+id/btnPrevC3"
+          style="?attr/materialButtonOutlinedStyle"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="32dp"
+          android:layout_marginTop="16dp"
+          android:layout_marginBottom="32dp"
+          android:text="Prev"
+          android:textAllCaps="false"
+          android:textSize="16sp"
+          app:cornerRadius="18dp"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/checkBoxTerms"
+          app:strokeColor="#79747E" />
+
+      <Button
+          android:id="@+id/btnPublish"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="16dp"
+          android:layout_marginEnd="32dp"
+          android:layout_marginBottom="32dp"
+          android:backgroundTint="#6750A4"
+          android:text="Publish This Cerbung"
+          android:textAllCaps="false"
+          android:textSize="16sp"
+          app:cornerRadius="18dp"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/checkBoxTerms" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+  </androidx.core.widget.NestedScrollView>
+
+  <com.google.android.material.bottomnavigation.BottomNavigationView
+      android:id="@+id/bottomNav"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_gravity="bottom"
+      app:menu="@menu/bottom_navigation_menu">
+
+  </com.google.android.material.bottomnavigation.BottomNavigationView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

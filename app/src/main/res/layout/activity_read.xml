@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+  <!-- Toolbar at the top -->
+  <com.google.android.material.appbar.AppBarLayout
+      android:id="@+id/appbar"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content">
+
+    =======
+    <!--      android:theme="@style/AppTheme.AppBarOverlay">-->
+
+    <include
+        android:id="@+id/customToolbar"
+        layout="@layout/custom_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <com.google.android.material.appbar.CollapsingToolbarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:contentScrim="?attr/colorPrimary"
+        app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+      <!-- Your Toolbar content -->
+
+    </com.google.android.material.appbar.CollapsingToolbarLayout>
+  </com.google.android.material.appbar.AppBarLayout>
+
+  <androidx.core.widget.NestedScrollView
+      android:layout_width="match_parent"
+      android:layout_height="578dp"
+
+
+      app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+      <com.google.android.material.textfield.TextInputLayout
+          android:id="@+id/txtInputLayoutSearch"
+          style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="15dp"
+          android:layout_marginTop="12dp"
+          android:layout_marginEnd="15dp"
+          android:hint="Continue the Story"
+          app:counterEnabled="true"
+          app:counterMaxLength="70"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/imageView15">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txtInputEditSearch"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:maxLength="70"
+            tools:layout_editor_absoluteX="19dp"
+            tools:layout_editor_absoluteY="659dp" />
+      </com.google.android.material.textfield.TextInputLayout>
+
+      <ImageView
+          android:id="@+id/btnLike"
+          android:layout_width="20dp"
+          android:layout_height="20dp"
+          android:layout_marginStart="16dp"
+          android:layout_marginTop="8dp"
+          app:layout_constraintStart_toEndOf="@+id/txtParagraph"
+          app:layout_constraintTop_toBottomOf="@+id/txtJudul"
+          app:srcCompat="@drawable/like" />
+
+      <ImageView
+          android:id="@+id/imgPoster"
+          android:layout_width="0dp"
+          android:layout_height="200dp"
+          android:layout_marginStart="16dp"
+          android:layout_marginTop="10dp"
+          android:layout_marginEnd="16dp"
+          android:src="@drawable/read"
+          app:circularflow_radiusInDP="12dp"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintHorizontal_bias="0.0"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toTopOf="parent" />
+
+      <TextView
+          android:id="@+id/txtJudul"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="16dp"
+          android:layout_marginTop="12dp"
+          android:text="Judul Cerbung"
+          android:textAlignment="textStart"
+          android:textSize="16sp"
+          android:textStyle="bold"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/imgPoster" />
+
+      <TextView
+          android:id="@+id/txtParagraph"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="2dp"
+          android:layout_marginTop="8dp"
+          android:text="3"
+          android:textAlignment="textStart"
+          android:textSize="16sp"
+          app:layout_constraintStart_toEndOf="@+id/imageView14"
+          app:layout_constraintTop_toBottomOf="@+id/txtJudul" />
+
+      <TextView
+          android:id="@+id/txtLike"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="2dp"
+          android:layout_marginTop="8dp"
+          android:text="3"
+          android:textAlignment="textStart"
+          android:textSize="16sp"
+          app:layout_constraintStart_toEndOf="@+id/btnLike"
+          app:layout_constraintTop_toBottomOf="@+id/txtJudul" />
+
+      <ImageView
+          android:id="@+id/imageView14"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="16dp"
+          android:layout_marginTop="8dp"
+          android:src="@drawable/baseline_format_list_numbered_24"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/txtJudul" />
+
+      <TextView
+          android:id="@+id/txtCreator"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="16dp"
+          android:layout_marginTop="4dp"
+          android:text="by Username"
+          android:textColor="#4E4E4E"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/txtGenre" />
+
+      <TextView
+          android:id="@+id/txtDate"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="4dp"
+          android:layout_marginEnd="16dp"
+          android:text="dd/mm/yyyy"
+          android:textAlignment="textEnd"
+          android:textColor="#4E4E4E"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/txtGenre" />
+
+      <androidx.recyclerview.widget.RecyclerView
+          android:id="@+id/recyclerViewParagraphs"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="10dp"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/txtCreator" />
+
+      <ImageView
+          android:id="@+id/imageView15"
+          android:layout_width="350dp"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="11dp"
+          android:src="@drawable/line"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/recyclerViewParagraphs" />
+
+      <TextView
+          android:id="@+id/txtGenre"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="16dp"
+          android:layout_marginTop="10dp"
+          android:background="#DCCDE7"
+          android:backgroundTint="#DCCDE7"
+          android:padding="10dp"
+          android:paddingLeft="20dp"
+          android:paddingRight="20dp"
+          android:text="Misteri"
+          android:textColor="#000000"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/imageView14" />
+
+      <TextView
+          android:id="@+id/txtRestricted"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="16dp"
+          android:layout_marginTop="10dp"
+          android:background="#DCCDE7"
+          android:padding="10dp"
+          android:paddingLeft="20dp"
+          android:paddingRight="20dp"
+          android:text="Restricted"
+          android:textColor="#000000"
+          android:visibility="invisible"
+          app:layout_constraintStart_toEndOf="@+id/txtGenre"
+          app:layout_constraintTop_toBottomOf="@+id/imageView14" />
+
+      <Button
+          android:id="@+id/btnRequest"
+          style="@style/Widget.Material3.Button.ElevatedButton.Icon"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="6dp"
+          android:layout_marginEnd="16dp"
+          android:text="Request to Contribute"
+          android:visibility="invisible"
+          app:icon="@drawable/baseline_add_24"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/txtInputLayoutSearch" />
+
+      <Button
+          android:id="@+id/btnFollow"
+          style="@style/Widget.Material3.Button.OutlinedButton.Icon"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="16dp"
+          android:layout_marginTop="6dp"
+          android:layout_marginBottom="32dp"
+          android:text="Follow"
+          android:textAlignment="center"
+          android:visibility="visible"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/txtInputLayoutSearch" />
+
+      <Button
+          android:id="@+id/btnSubmit"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="6dp"
+          android:layout_marginEnd="16dp"
+          android:layout_marginBottom="16dp"
+          android:text="Submit"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/txtInputLayoutSearch" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+  </androidx.core.widget.NestedScrollView>
+
+  <com.google.android.material.bottomnavigation.BottomNavigationView
+      android:id="@+id/bottomNav"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_gravity="bottom"
+      app:menu="@menu/bottom_navigation_menu">
+
+  </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
